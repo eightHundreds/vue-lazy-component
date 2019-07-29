@@ -46,7 +46,7 @@ export default {
       type: Number,
       default: 50
     },
-    imgSelector: {
+    contentSelector: {
       type: String
     }
   },
@@ -125,8 +125,12 @@ export default {
       this.requestAnimationFrame(async () => {
         this.isInit = true
         this.$emit('init')
+        if(!this.contentSelector){
+          this.loaded = true
+          return
+        }
         await this.$nextTick()
-        const elements = this.$refs.container.$el.querySelectorAll(this.imgSelector)
+        const elements = this.$refs.container.$el.querySelectorAll(this.contentSelector)
         const tasks = Array.from(elements).map(
           e =>
             new Promise(resolve => {
