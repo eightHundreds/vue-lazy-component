@@ -87,6 +87,7 @@ export default {
 | threshold | 预加载阈值, css单位  | String | true      | `0px` |
 | tagName | 包裹组件的外层容器的标签名  | String | true  | `div` |
 | timeout | 等待时间，如果指定了时间，不论可见与否，在指定时间之后自动加载  | Number | true    | - |
+| contentSelector | 内容块选择器,当内容块onload后才移除骨架,展示内容  | Number | true    | - |
 
 ## Events
 
